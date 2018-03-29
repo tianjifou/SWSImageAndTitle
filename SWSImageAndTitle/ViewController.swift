@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         let btn = UIButton()
         btn.layer.borderWidth = 2
         btn.layer.borderColor = UIColor.red.cgColor
-        btn.frame = CGRect.init(x: 120, y: 100, width: 20, height: 10)
+        btn.frame = CGRect.init(x: 20, y: 100, width: 300, height: 300)
         btn.setTitleColor(UIColor.blue, for: .normal)
         btn.titleLabel?.layer.borderColor = UIColor.red.cgColor
         btn.titleLabel?.layer.borderWidth = 1
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         let titleSize = btn.titleLabel!.frame.size
         let titleOrigin = btn.titleLabel!.frame.origin
         print((btnFrame.size.width/2,btnFrame.size.height/2))
-        
+        // 判断是否居中
         switch type {
         case .horizontalLeft:
             print(((imageSize.width + titleSize.width + distance)/2 + imageOrigin.x,btn.imageView?.center.y))
