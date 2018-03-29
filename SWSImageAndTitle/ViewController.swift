@@ -72,7 +72,7 @@ extension UIButton {
     ///   - font: 内容文字字号
     ///   - image: 图片
     ///   - distance: 文字与图片间隔
-    ///   - btnSize: btn尺寸(当在水平方向文字内容长度加上图片宽度超过btn宽度时，需要增加btn区域宽度，竖直方向不影响)
+    ///   - btnSize: btn尺寸(当在水平方向文字内容长度加上图片宽度超过btn宽度时，需要增加btn区域宽度)
     func createBtn(type:ImageDirection,title:String,font:CGFloat,image:UIImage,distance:CGFloat,btnSize:CGSize){
         self.setImage(image, for: .normal)
         self.setTitle(title, for: .normal)
@@ -83,7 +83,7 @@ extension UIButton {
         let imageHeight = image.size.height
     
         //UIEdgeInsetsMake 默认为(0, 0, 0, 0)/(top，left，bottom，right)，显示的是image在左边，title在右边
-        //水平移动规律，x = (-left-right)+left ,向左移动x距离
+        //水平移动规律，x = (-left-right)/2+left ,向左移动x距离
         //位置相对变化方向与UIEdgeInsetsMake相对应的方向位置的值负相关，相反方向位置的值正相关
         //contentEdgeInsets 作用是为了扩大btn的有效区域防止title和image超过btn规定区域后被压缩
         switch type {
